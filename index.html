@@ -139,8 +139,8 @@ const CONFIG = {
   eyebrow:     "100% Free LIVE Training:",
   revealLine:  "",
   headline:    "How Everyday People Are Making {$3-10K/Month} Creating Simple Content For Billion-Dollar Brands Like Canva, Adobe & BeReal",
-  subhead:     "The same skill I used to quit my burnt-out $14/hr Walmart job and build a six-figure income filming simple content for brands, with zero followers and no experience.",
-  benefits:    ["Under 300 followers", "No experience needed", "Just your phone"],
+  subhead:     "It's the same skill I used to quit my burnt-out $14/hr Walmart job and build a six-figure income filming simple content for brands, all with zero followers and no experience.",
+  benefits:    ["No followers needed", "No experience needed", "Just your phone"],
   eventDate:   "Sunday, July 11, 2026 at 2:00 PM EST",
   eventISO:    "2026-07-11T14:00:00-05:00",
 
@@ -175,7 +175,7 @@ const CONFIG = {
     { tag:"FREE GIFT #1", title:"My Exact Brand Outreach Script", body:"The word-for-word script I used to land my first paid partnership. The same one that's helped students get their first paid brand partnership in a single week." },
     { tag:"FREE GIFT #2", title:"A Free Plug-And-Play Portfolio", body:"A done-for-you portfolio template you copy, fill in, and send to brands the same day. The exact format that gets creators booked with no following." },
   ],
-  onlyLive:    "Both free gifts are for live attendees only.",
+  onlyLive:    "",
 
   footerLinks: "Terms of Service | Privacy Policy | Contact",
   disclaimer:  "This site is not part of the Facebook website, Instagram or Meta Inc. Additionally, this site is NOT endorsed by Meta in any way. Facebook and Instagram are trademarks of Meta, Inc.",
@@ -287,7 +287,7 @@ document.getElementById('pgrid').innerHTML=CONFIG.proofImages.map((im,i)=>`<div 
 
 H('giftHeading',CONFIG.giftHeading);
 document.getElementById('giftgrid').innerHTML=CONFIG.gifts.map(g=>`<div class="giftcard"><span class="tag">${g.tag}</span><h4>${marks(g.title)}</h4><p>${marks(g.body)}</p></div>`).join('');
-H('onlyLive',CONFIG.onlyLive);
+if (CONFIG.onlyLive) { H('onlyLive',CONFIG.onlyLive); } else { const o=document.getElementById('onlyLive'); if(o) o.style.display='none'; }
 
 document.getElementById('footCta').textContent=CONFIG.ctaText;
 T('footCopy','© UGC World '+CONFIG.eventISO.slice(0,4));
