@@ -104,12 +104,15 @@
   .foot .disc{font-size:11.5px;color:#a99bc0;max-width:760px;margin:0 auto;line-height:1.5}
 
   @media(max-width:820px){
-    .headline{font-size:29px;line-height:1.15}
-    .subhead{font-size:15px;line-height:1.5;max-width:340px}
-    .benefits{gap:8px 16px;margin-bottom:20px}
+    .hero{padding:20px 0 16px}
+    .eyebrow{margin-bottom:12px}
+    .headline{font-size:27px;line-height:1.15;margin:0 auto 14px}
+    .subhead{font-size:15px;line-height:1.5;max-width:340px;margin:18px auto 16px}
+    .benefits{gap:8px 16px;margin-bottom:6px}
     .benefits span{font-size:13.5px}
-    .datepill{font-size:15px;padding:10px 18px}
-    .formhead{font-size:20px}
+    .datepill{font-size:15px;padding:10px 18px;margin-top:18px}
+    .formhead{font-size:18px;margin:0 auto 12px}
+    .form input{padding:14px 18px;margin-bottom:11px}
     .cta b{font-size:21px}
     .sec h2,.wall h2,.gifts h2{font-size:26px}
     .cards{grid-template-columns:1fr 1fr}
@@ -196,9 +199,6 @@ const CONFIG = {
     <div class="eyebrow" id="eyebrow"></div>
     <div class="reveal" id="revealLine"></div>
     <h1 class="headline" id="headline"></h1>
-    <p class="subhead" id="subhead"></p>
-    <div class="benefits" id="benefits"></div>
-    <div class="datepill" id="eventDate"></div>
     <div class="formhead" id="formHeading"></div>
     <form class="form" onsubmit="return false">
       <input type="text" placeholder="First Name*">
@@ -207,6 +207,9 @@ const CONFIG = {
       <button class="cta"><b id="ctaText"></b><small id="ctaSub"></small></button>
     </form>
     <div class="fine" id="finePrint"></div>
+    <div class="datepill" id="eventDate" style="margin-top:22px"></div>
+    <p class="subhead" id="subhead"></p>
+    <div class="benefits" id="benefits" style="margin-bottom:6px"></div>
   </div>
 
   <!-- MINI PROOF -->
