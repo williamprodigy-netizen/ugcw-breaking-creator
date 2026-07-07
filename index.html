@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UGC World - Free Live Training</title>
+<style>
+  :root{
+    --bg:#f5f2fb; --bg2:#fbf9ff; --card:#ffffff;
+    --ink:#241b38; --ink2:#615a75;
+    --mag:#7c3aed; --pink:#9d6bf5; --magdeep:#5b21b6; --soft:#e7defb;
+    --marker:#e6d8fb; --line:#e7e0f4; --grn:#1fae66;
+    --serif:Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;overflow-x:hidden;max-width:100%}
+  body{background:var(--bg);color:var(--ink);
+    font:16px/1.55 "Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:940px;margin:0 auto;padding:0 20px}
+  img{max-width:100%;display:block}
+  .hl{color:var(--mag)}
+  .mark{background:linear-gradient(180deg,transparent 55%,var(--marker) 55%);padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  u{text-decoration-color:var(--mag);text-decoration-thickness:2px;text-underline-offset:3px}
+
+  .breakingbar{background:#1c1530;color:#fff;text-align:center;font-weight:800;font-size:14px;letter-spacing:.03em;padding:11px 16px;line-height:1.35}
+  .breakingbar .hl{color:#ffc24b}
+  .topline{height:6px;background:linear-gradient(90deg,var(--mag),var(--pink))}
+  .brandbar{background:var(--mag);text-align:center;padding:18px 20px}
+  .brandbar .b1{font-family:var(--serif);color:#fff;font-size:26px;letter-spacing:.14em;font-weight:700}
+  .brandbar .b2{font-family:var(--serif);color:#f3ddf5;font-size:18px;font-style:italic;margin-top:-4px}
+
+  .hero{text-align:center;padding:38px 0 22px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--mag);font-weight:800;font-size:14px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
+  .eyebrow::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--mag);box-shadow:0 0 0 4px var(--soft)}
+  .reveal{font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:0 auto 14px;max-width:640px}
+  .headline{font-size:50px;line-height:1.1;font-weight:800;letter-spacing:-.02em;margin:0 auto 20px;max-width:820px}
+  .subhead{font-size:18px;line-height:1.5;font-weight:600;color:var(--ink2);max-width:660px;margin:0 auto 20px}
+  .benefits{display:flex;justify-content:center;flex-wrap:wrap;gap:10px 22px;margin:0 auto 24px}
+  .benefits span{font-size:15px;font-weight:700;color:var(--ink)}
+  .benefits span::before{content:"✓";color:var(--grn);font-weight:900;margin-right:6px}
+  .datepill{display:inline-block;border:2px dashed var(--mag);background:var(--soft);color:var(--mag);
+    font-weight:700;font-style:italic;font-size:18px;border-radius:12px;padding:11px 30px;margin-bottom:24px}
+
+  .formhead{font-size:23px;font-weight:800;margin:0 auto 16px;max-width:520px;line-height:1.25}
+  .form{max-width:620px;margin:0 auto}
+  .form input{width:100%;border:1px solid #ddd4ee;background:#fff;border-radius:14px;padding:17px 20px;font-size:16px;color:var(--ink);margin-bottom:13px;font-family:inherit}
+  .form input::placeholder{color:#9c92b5}
+  .cta{width:100%;border:0;cursor:pointer;background:linear-gradient(120deg,var(--mag),var(--pink));color:#fff;border-radius:60px;
+    padding:22px;box-shadow:0 12px 26px rgba(193,62,193,.38);transition:transform .08s}
+  .cta:active{transform:translateY(3px)}
+  .cta b{display:block;font-size:26px;font-weight:800;letter-spacing:-.01em}
+  .cta small{display:block;font-size:14px;font-weight:600;opacity:.95;margin-top:5px}
+  .fine{font-size:14px;font-weight:600;text-align:center;max-width:600px;margin:22px auto 0;line-height:1.5;color:var(--ink)}
+
+  .miniproof{text-align:center;padding:22px 0}
+  .avatars{display:flex;justify-content:center;margin-bottom:8px}
+  .avatars i{width:36px;height:36px;border-radius:50%;border:2px solid var(--bg);margin-left:-8px}
+  .avatars i:first-child{margin-left:0}
+  .miniproof .stars{color:#ffcf6b;font-size:18px;letter-spacing:2px}
+  .miniproof .cap{font-size:14px;color:var(--ink2);margin-top:4px;font-weight:600}
+
+  .sec{padding:40px 0 6px;text-align:center}
+  .sec h2{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:0 0 8px}
+  .sec .subh{font-size:16px;color:var(--ink2);max-width:600px;margin:0 auto 26px;font-weight:600}
+
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 18px;box-shadow:0 8px 22px rgba(120,60,140,.06)}
+  .card .seal{width:34px;height:34px;margin:0 auto 14px;border-radius:50%;background:linear-gradient(135deg,var(--mag),var(--pink));color:#fff;display:grid;place-items:center;font-weight:900}
+  .card h4{font-size:17px;font-weight:800;margin:0 0 12px;line-height:1.3}
+  .card p{font-size:13.5px;line-height:1.5;color:var(--ink2);margin:0}
+
+  .ctablock{text-align:center;padding:34px 0}
+  .ctablock .d{color:var(--mag);font-weight:700;font-size:17px;margin-bottom:14px}
+  .cd{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+  .cd .u{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 4px;min-width:66px}
+  .cd .u b{display:block;font-size:26px;font-weight:900;color:var(--mag);line-height:1}
+  .cd .u small{font-size:10px;color:#948bad;letter-spacing:.1em;text-transform:uppercase}
+  .ctablock .after{color:var(--mag);font-weight:700;font-size:14px;margin-top:12px}
+
+  /* proof wall */
+  .wall{padding:44px 0 10px;text-align:center}
+  .wall h2{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:0 0 8px}
+  .wall .subh{font-size:16px;color:var(--ink2);max-width:600px;margin:0 auto 24px;font-weight:600}
+  .pgrid{columns:3;column-gap:14px;padding:22px;background:linear-gradient(135deg,#f6f1fc,#eee6fa);border:1px solid var(--line);border-radius:20px}
+  .ptile{break-inside:avoid;margin-bottom:14px;border-radius:12px;overflow:hidden;background:#201a33;color:#a89dc4;
+    font-size:12px;min-height:120px;display:grid;place-items:center;text-align:center;padding:16px;border:1px solid #322a4a}
+  .ptile img{width:100%;display:block}
+  .walltag{display:inline-block;margin-top:18px;background:var(--soft);color:var(--magdeep);font-weight:800;font-size:13px;border-radius:30px;padding:8px 18px}
+
+  /* gifts */
+  .gifts{padding:42px 0 6px;text-align:center}
+  .gifts h2{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:0 0 16px}
+  .freebadge{display:inline-block;background:linear-gradient(120deg,var(--mag),var(--pink));color:#fff;font-size:46px;font-weight:900;padding:6px 28px;border-radius:14px;transform:rotate(-4deg);box-shadow:0 12px 26px rgba(193,62,193,.4);margin-bottom:26px}
+  .giftgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left}
+  .giftcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 10px 26px rgba(120,60,140,.08);position:relative}
+  .giftcard .tag{display:inline-block;background:var(--mag);color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;border-radius:20px;padding:5px 14px;margin-bottom:14px}
+  .giftcard h4{font-size:20px;font-weight:800;margin:0 0 10px;line-height:1.25}
+  .giftcard p{font-size:14.5px;line-height:1.55;color:var(--ink2);margin:0}
+  .onlylive{margin-top:20px;font-size:15px;font-weight:700;color:var(--mag)}
+
+  .foot{text-align:center;padding:30px 20px 44px;color:var(--ink2)}
+  .foot .close{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:16px}
+  .foot .links{font-size:13px;margin:16px 0 10px}
+  .foot .disc{font-size:11.5px;color:#a99bc0;max-width:760px;margin:0 auto;line-height:1.5}
+
+  @media(max-width:820px){
+    .headline{font-size:31px}
+    .subhead{font-size:16px}
+    .datepill{font-size:16px;padding:10px 20px}
+    .formhead{font-size:20px}
+    .cta b{font-size:21px}
+    .sec h2,.wall h2,.gifts h2{font-size:26px}
+    .cards{grid-template-columns:1fr 1fr}
+    .pgrid{columns:2}
+    .giftgrid{grid-template-columns:1fr}
+    .freebadge{font-size:38px}
+  }
+  @media(max-width:480px){
+    .headline{font-size:27px}
+    .cards{grid-template-columns:1fr}
+    .pgrid{columns:1}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================= -->
+<!--  ⬇  EDIT EVERYTHING HERE.                                     -->
+<!--  MARKERS: {magenta}  [[pink marker]]  __underline__  *italic* -->
+<!--  IMAGE SLOTS: paste a URL/path, or leave "" for a placeholder -->
+<!-- ============================================================= -->
+<script>
+const CONFIG = {
+  brandLine1:  "",   // top brand bar. Leave "" to hide it entirely.
+  brandLine2:  "",
+
+  breakingText:"📣 {BREAKING:} For The First Time Ever, You Don't Have To Be An Influencer To Make A Full-Time Income As A Creator",
+
+  eyebrow:     "100% Free LIVE Training:",
+  revealLine:  "",
+  headline:    "How Everyday People Are Making {$3-10K/Month} Creating Simple Content For Billion-Dollar Brands Like Canva, Adobe & BeReal",
+  subhead:     "For the first time ever, you don't need followers to make an income as a creator.",
+  benefits:    ["Under 300 followers", "No experience needed", "Just your phone"],
+  eventDate:   "Sunday, July 11, 2026 at 2:00 PM EST",
+  eventISO:    "2026-07-11T14:00:00-05:00",
+
+  formHeading: "Where Should We Send [[Your Access + Free Gifts]]? 🎁",
+  ctaText:     "Yes! Lock In My Free Seat!",
+  ctaSub:      "Show up LIVE to unlock your free gifts",
+  finePrint:   "Live on *Sunday, July 11 at 2:00 PM EST*. No replay. The free gifts are for live attendees only.",
+
+  miniProofCap:"1,000+ students trained. Real, verified brand partnerships.",
+
+  learnHeading:"Here's {Everything} You'll Learn On The Training:",
+  cards: [
+    { title:"How this [[actually works]]", body:"UGC is not influencing and it is not ads. I'll show you *exactly* what you would film so it __finally makes sense__." },
+    { title:"Why brands [[pay micro-creators more]]", body:"Brands now pay MORE for small, authentic creators than big influencers because they *convert better*. I'll show you exactly why." },
+    { title:"How to get booked with [[under 300 followers]]", body:"I started from scratch. I'll walk you through the same system that's helped __over 10,000 students__ land partnerships." },
+    { title:"What to actually [[film to get paid]]", body:"The brands already *want* this content. I'll show you why it's __nothing like what you're imagining__." },
+  ],
+
+  cta2Text:    "Yes, Save My Free Seat →",
+  cta2Sub:     "Limited spots available",
+  cta2After:   "Show up LIVE to unlock your 2 free gifts",
+
+  /* ---- SOCIAL PROOF SCREENSHOT WALL (student brand deals) ---- */
+  proofHeading:"Real Brand Partnerships From Real Students",
+  proofSub:    "Actual screenshots from women inside UGC World. Most had zero followers when they started.",
+  proofImages: ["","","","","","","","",""],   // drop student brand-deal screenshots here (empty = placeholder tiles)
+  proofTag:    "Hundreds more on the results page",
+
+  /* ---- FREE GIFTS ---- */
+  giftHeading: "Show Up Live And Get These {2 Free Gifts}",
+  gifts: [
+    { tag:"FREE GIFT #1", title:"My Exact Brand Outreach Script", body:"The word-for-word script I used to land my first paid partnership. The same one that's helped students get their first paid brand partnership in a single week." },
+    { tag:"FREE GIFT #2", title:"A Free Plug-And-Play Portfolio", body:"A done-for-you portfolio template you copy, fill in, and send to brands the same day. The exact format that gets creators booked with no following." },
+  ],
+  onlyLive:    "Both free gifts are for live attendees only.",
+
+  footerLinks: "Terms of Service | Privacy Policy | Contact",
+  disclaimer:  "This site is not part of the Facebook website, Instagram or Meta Inc. Additionally, this site is NOT endorsed by Meta in any way. Facebook and Instagram are trademarks of Meta, Inc.",
+};
+/* ============================================================= */
+</script>
+
+<div class="breakingbar" id="breakingbar"></div>
+<div class="topline"></div>
+<div class="brandbar"><div class="b1" id="b1"></div><div class="b2" id="b2"></div></div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero" id="top">
+    <div class="eyebrow" id="eyebrow"></div>
+    <div class="reveal" id="revealLine"></div>
+    <h1 class="headline" id="headline"></h1>
+    <p class="subhead" id="subhead"></p>
+    <div class="benefits" id="benefits"></div>
+    <div class="datepill" id="eventDate"></div>
+    <div class="formhead" id="formHeading"></div>
+    <form class="form" onsubmit="return false">
+      <input type="text" placeholder="First Name*">
+      <input type="email" placeholder="Email*">
+      <input type="tel" placeholder="Phone*  555-555-5555">
+      <button class="cta"><b id="ctaText"></b><small id="ctaSub"></small></button>
+    </form>
+    <div class="fine" id="finePrint"></div>
+  </div>
+
+  <!-- MINI PROOF -->
+  <div class="miniproof">
+    <div class="avatars" id="avatars"></div>
+    <div class="stars">★★★★★</div>
+    <div class="cap" id="miniProofCap"></div>
+  </div>
+
+  <!-- LEARN -->
+  <div class="sec">
+    <h2 id="learnHeading"></h2>
+    <div class="cards" id="cards"></div>
+  </div>
+
+  <!-- CTA -->
+  <div class="ctablock" data-ctablock></div>
+
+  <!-- PROOF WALL -->
+  <div class="wall">
+    <h2 id="proofHeading"></h2>
+    <div class="subh" id="proofSub"></div>
+    <div class="pgrid" id="pgrid"></div>
+    <div class="walltag" id="proofTag"></div>
+  </div>
+
+  <!-- GIFTS -->
+  <div class="gifts">
+    <h2 id="giftHeading"></h2>
+    <div class="freebadge">Free!</div>
+    <div class="giftgrid" id="giftgrid"></div>
+    <div class="onlylive" id="onlyLive"></div>
+  </div>
+
+  <!-- CTA -->
+  <div class="ctablock" data-ctablock></div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <div class="close">Doors close when the live training starts.</div>
+    <button class="cta" style="max-width:460px;margin:0 auto"><b id="footCta"></b></button>
+    <div class="links"><span id="footCopy"></span> | <span id="footLinks"></span></div>
+    <div class="disc" id="disclaimer"></div>
+  </div>
+
+</div>
+
+<script>
+function marks(s){return s
+  .replace(/\[\[(.+?)\]\]/g,'<span class="mark">$1</span>')
+  .replace(/\{(.+?)\}/g,'<span class="hl">$1</span>')
+  .replace(/__(.+?)__/g,'<u>$1</u>')
+  .replace(/\*(.+?)\*/g,'<em>$1</em>');}
+const H=(id,v)=>{const e=document.getElementById(id);if(e)e.innerHTML=marks(v);};
+const T=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+
+setTimeout(()=>{},0);
+if (CONFIG.brandLine1 || CONFIG.brandLine2) { T('b1',CONFIG.brandLine1); T('b2',CONFIG.brandLine2); }
+else { document.querySelector('.brandbar').style.display='none'; }
+if (CONFIG.breakingText) { H('breakingbar', CONFIG.breakingText); } else { const b=document.querySelector('.breakingbar'); if(b) b.style.display='none'; }
+H('eyebrow',CONFIG.eyebrow);
+if (CONFIG.revealLine) { H('revealLine',CONFIG.revealLine); } else { const r=document.getElementById('revealLine'); if(r) r.style.display='none'; }
+H('headline',CONFIG.headline); H('subhead',CONFIG.subhead);
+document.getElementById('benefits').innerHTML=CONFIG.benefits.map(b=>`<span>${b}</span>`).join('');
+T('eventDate',CONFIG.eventDate);
+H('formHeading',CONFIG.formHeading);
+document.getElementById('ctaText').textContent=CONFIG.ctaText;
+document.getElementById('ctaSub').textContent=CONFIG.ctaSub;
+H('finePrint',CONFIG.finePrint);
+
+const av=['#e6a4ac','#c9b18f','#a8bcd6','#cbb7d9','#9fc9b3','#e0c081','#d69fa6','#b6c4a0'];
+document.getElementById('avatars').innerHTML=av.map(c=>`<i style="background:${c}"></i>`).join('');
+T('miniProofCap',CONFIG.miniProofCap);
+
+H('learnHeading',CONFIG.learnHeading);
+document.getElementById('cards').innerHTML=CONFIG.cards.map(c=>`<div class="card"><div class="seal">✓</div><h4>${marks(c.title)}</h4><p>${marks(c.body)}</p></div>`).join('');
+
+H('proofHeading',CONFIG.proofHeading); H('proofSub',CONFIG.proofSub); T('proofTag',CONFIG.proofTag);
+document.getElementById('pgrid').innerHTML=CONFIG.proofImages.map((im,i)=>`<div class="ptile">${im?`<img src="${im}" alt="student brand deal ${i+1}">`:`Drop student brand-deal screenshot ${i+1}`}</div>`).join('');
+
+H('giftHeading',CONFIG.giftHeading);
+document.getElementById('giftgrid').innerHTML=CONFIG.gifts.map(g=>`<div class="giftcard"><span class="tag">${g.tag}</span><h4>${marks(g.title)}</h4><p>${marks(g.body)}</p></div>`).join('');
+H('onlyLive',CONFIG.onlyLive);
+
+document.getElementById('footCta').textContent=CONFIG.ctaText;
+T('footCopy','© UGC World '+CONFIG.eventISO.slice(0,4));
+T('footLinks',CONFIG.footerLinks);
+T('disclaimer',CONFIG.disclaimer);
+
+// reusable cta + countdown
+document.querySelectorAll('[data-ctablock]').forEach(el=>{
+  el.innerHTML=`<div class="d">${CONFIG.eventDate}</div>
+    <div class="cd"><div class="u"><b data-d>00</b><small>Days</small></div><div class="u"><b data-h>00</b><small>Hrs</small></div><div class="u"><b data-m>00</b><small>Min</small></div><div class="u"><b data-s>00</b><small>Sec</small></div></div>
+    <button class="cta"><b>${CONFIG.cta2Text}</b><small>${CONFIG.cta2Sub}</small></button>
+    <div class="after">${marks(CONFIG.cta2After)}</div>`;
+});
+function target(){let t=new Date(CONFIG.eventISO);const n=new Date();while(t<n)t=new Date(t.getTime()+7*864e5);return t;}
+let TGT=target();const pad=n=>String(n).padStart(2,'0');
+function tick(){let d=Math.max(0,TGT-new Date());if(d===0)TGT=target();
+  const D=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);
+  document.querySelectorAll('[data-d]').forEach(e=>e.textContent=pad(D));
+  document.querySelectorAll('[data-h]').forEach(e=>e.textContent=pad(h));
+  document.querySelectorAll('[data-m]').forEach(e=>e.textContent=pad(m));
+  document.querySelectorAll('[data-s]').forEach(e=>e.textContent=pad(s));}
+tick();setInterval(tick,1000);
+document.querySelectorAll('.cta').forEach(b=>b.addEventListener('click',()=>document.getElementById('top').scrollIntoView({behavior:'smooth'})));
+</script>
+
+</body>
+</html>
